@@ -26,6 +26,7 @@ body{
     border-radius:3px;
 }
 header{
+    width: 100%;
     display: flex;
     justify-content: space-around;
     padding: 30px 0px;
@@ -39,7 +40,7 @@ header{
     color: rgba(0,0,0,0.9);
 }
 .search{
-    max-width: 400px;
+    max-width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
