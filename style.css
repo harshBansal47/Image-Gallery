@@ -69,6 +69,7 @@ header{
 }
 .search button{
     background: transparent;
+    border: none;
     color:white;
     cursor: pointer;
     transition: all 0.5s ease;
