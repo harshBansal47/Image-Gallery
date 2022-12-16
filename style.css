@@ -67,7 +67,7 @@ header{
 ::placeholder{
     color: rgb(200, 212, 223);
 }
-.search span{
+.search button{
     background: transparent;
     color:white;
     cursor: pointer;
