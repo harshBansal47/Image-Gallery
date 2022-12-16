@@ -53,16 +53,21 @@ let generateHTML = (data)=>{
 }
 
 //Function for search query
-const input = document.querySelector('.search');
-//For Button
-document.getElementById('sr').addEventListener('click',()=>{performSearch(input.value)});
-input.addEventListener('submit', (e)=>{performSearch(e)});
+const input_Element = document.getElementById('inputSearch');
+// Search Function
 let performSearch =async(event)=>{
-        search_value = event.target.querySelector('input').value;
-        baseUrl= `https://api.pexels.com/v1/search?query=${search_value}&per_page=9`;
-        let jdata = await fetchData(baseUrl);
-        generateHTML(jdata.photos);
+    event.preventDefault();
+    search_value = input_Element.value;
+    baseUrl= `https://api.pexels.com/v1/search?query=${search_value}&per_page=9`;
+    let jdata = await fetchData(baseUrl);
+    generateHTML(jdata.photos);
 }
+// adding event onPressEnter after writing query
+document.querySelector('.search').addEventListener('submit',(e)=>{
+    performSearch(e);
+})
+// //For Button
+// document.getElementById('sr').addEventListener('click',()=>{performSearch(input.value)});
 
 //previous button next button
 let prev = document.querySelector('.previous');
