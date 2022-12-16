@@ -16,6 +16,24 @@ body{
     width: 100%;
     min-height: 100vh;
 }
+.loader{
+    width:100%;
+    height: 100vh;
+    position: fixed;
+    top:0;
+    left:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    background:#fff;
+}
+.loader iframe{
+    border: none;
+    width:500px;
+    height: 500px;
+}
+
 .container{
     background-color: white;
     background-position: center;

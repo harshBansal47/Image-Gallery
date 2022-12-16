@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-brands/css/uicons-brands.css'>
 </head>
-<body> 
+<body onload="handleLoad()"> 
+    <div class = "loader"><iframe src="https://lottie.host/?file=0a7e28d3-f61a-42a6-b99e-6f1542241efb/TEpH4Gfjhx.json"></iframe></div>
     <div class = container>
         <header>
             <h1 class="heading">Image Gallery</h1>
@@ -47,5 +48,11 @@
         </footer>
     </div>
     <script src="script1.js"></script>
+    <script>
+        const loader = document.querySelector('.loader');
+        const handleLoad = ()=>{
+            loader.style.display = "none";
+        }
+    </script>
 </body>
 </html>
