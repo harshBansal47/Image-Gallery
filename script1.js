@@ -53,10 +53,10 @@ let generateHTML = (data)=>{
         //loader
         div.classList.add('item');
         div.innerHTML = `
-        <a href = "${element.url}"><img src = "${element.src.original}"></a>
+        <img src = "${element.src.original}">
         <div class = "imgbottom">
             <h4><a href="${element.photographer_url}">${element.photographer}</a></h4>
-            <h4><a  download="img1"><span class="material-symbols-outlined">download</span></a></h4>
+            <h4><a href="${element.url}"><span class="material-symbols-outlined">download</span></a></h4>
         </div>`; 
         gallery.appendChild(div);       
     });
