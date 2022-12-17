@@ -107,6 +107,7 @@ header{
     display: grid;
     grid-template-columns:repeat(3,1fr);
     grid-gap: 1em;
+    position: relative;
 }
 .loader2{
     background-color: #fff;

@@ -12,6 +12,7 @@ let search_value = '';
 let loadContent = ()=>{
     document.addEventListener('DOMContentLoaded',async()=>{     
         let data = await fetchData(baseUrl);
+        document.querySelector('.loader2').style.display ="none";  
         generateHTML(data.photos);
     });
 }
@@ -29,7 +30,6 @@ let fetchData = async(url)=>{
     let data = await res.json();
     prev_url = data.prev_page;
     next_url = data.next_page;
-    document.querySelector('.loader2').getElementsByClassName.display ="none";
     return data;         
 }
 // Function For generating html
@@ -47,7 +47,7 @@ let generateHTML = (data)=>{
             <h4><a href="${element.photographer_url}">${element.photographer}</a></h4>
             <h4><a  download="img1"><span class="material-symbols-outlined">download</span></a></h4>
         </div>`;
-        gallery.appendChild(div);     
+        gallery.appendChild(div);       
     });
 }
 //Function for search query
