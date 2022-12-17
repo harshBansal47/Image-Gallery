@@ -8,11 +8,22 @@ let next_url = '';
 //initial search value
 let search_value = '';
 
+//handle inside loader
+const loader2 =document.querySelector('.loader2');
+const handleLoad2 = ()=>{
+    loader2.style.display = "none";
+}
+// handle main html loader
+const loader = document.querySelector('.loader');
+const handleLoad = ()=>{
+    loader.style.display = "none";
+}
+
 // Default Content on web page
 let loadContent = ()=>{
     document.addEventListener('DOMContentLoaded',async()=>{     
         let data = await fetchData(baseUrl);
-        document.querySelector('.loader2').style.display ="none";  
+        handleLoad2();
         generateHTML(data.photos);
     });
 }
@@ -46,7 +57,7 @@ let generateHTML = (data)=>{
         <div class = "imgbottom">
             <h4><a href="${element.photographer_url}">${element.photographer}</a></h4>
             <h4><a  download="img1"><span class="material-symbols-outlined">download</span></a></h4>
-        </div>`;
+        </div>`; 
         gallery.appendChild(div);       
     });
 }
@@ -58,7 +69,11 @@ let performSearch =async(event)=>{
     search_value = input_Element.value;
     baseUrl= `https://api.pexels.com/v1/search?query=${search_value}&per_page=9`;
     let jdata = await fetchData(baseUrl);
-    generateHTML(jdata.photos);
+    if(jdata.photos.length ==0){
+        window.alert("Invalid Search Keywords");
+    }else{
+        generateHTML(jdata.photos);
+    }
 }
 // adding event onPressEnter after writing query
 document.querySelector('.search').addEventListener('submit',(e)=>{
@@ -82,6 +97,7 @@ const handleprev = async()=>{
     generateHTML(jsonData.photos);
 }
 handleNext=async()=>{
+
     baseUrl = next_url;
     let jsonData = await fetchData(baseUrl);
     generateHTML(jsonData.photos);

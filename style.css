@@ -92,6 +92,7 @@ header{
     cursor: pointer;
     transition: all 0.5s ease;
     width: 30px;
+    border-radius: 50%;
 }
 .search button:hover{
     color: hwb(271 70% 22%);
@@ -111,7 +112,7 @@ header{
 }
 .loader2{
     background-color: #fff;
-    height: 100%;
+    height: 100vh;
     width: 100%;
     position: absolute;
     top:0;
@@ -119,7 +120,7 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 5;
+    z-index:3;
 }
 .loader2 iframe{
     border: none;
@@ -256,6 +257,9 @@ footer{
     }
     .search{
         margin-top: 15px;
+    }
+    .item img{
+        height: 300px;
     }
 }
 @media screen and (max-width: 400px){
