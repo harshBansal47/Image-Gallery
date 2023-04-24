@@ -102,3 +102,13 @@ handleNext=async()=>{
     let jsonData = await fetchData(baseUrl);
     generateHTML(jsonData.photos);
 }
+//handelling tabs navigation
+let tabs = document.querySelectorAll('.outline');
+tabs.forEach(item=>{
+    item.addEventListener('click',async()=>{
+        let query = item.innerHTML.toLowerCase();
+        baseUrl= `https://api.pexels.com/v1/search?query=${query}&per_page=9`;
+        let jdata = await fetchData(baseUrl);
+        generateHTML(jdata.photos);
+    })
+})
